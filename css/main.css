@@ -63,9 +63,29 @@ ul{
     background-color: #EFEFEF;
 }*/
 
+.categories h3, .categories form, .ion-plus-round{
+    display: inline-block;
+}
+
+.categories form, .ion-plus-round{
+    float: right;
+}
+
+.add-item{
+    border-radius: 5px;
+    margin-top: 20px;
+    margin-right: 5px;
+}
+
+.ion-plus-round{
+    margin-top: 20px;
+    /*margin-left: 5px;*/
+    margin-right: 10px;
+}
+
 .categories h3{
     margin-left: 10px;
-    display: inline-block;
+    /*display: inline-block;*/
     font-size: 20px;
     font-family: 'Josefin Sans', sans-serif;
     font-weight: 600;
