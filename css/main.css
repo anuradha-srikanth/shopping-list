@@ -63,11 +63,18 @@ ul{
     background-color: #EFEFEF;
 }*/
 
-.categories h3, .categories form, .ion-plus-round{
-    display: inline-block;
+button{
+    border-width: 0;
+    /*width: 10px;
+    height: 10px;*/
 }
 
-.categories form, .ion-plus-round{
+.categories h3, .categories form, .cat1-button, .ion-plus-round{
+    display: inline-block;
+    /*background-color: #8A909C;*/
+}
+
+.categories form, .cat1-button, .ion-plus-round{
     float: right;
 }
 
@@ -121,7 +128,7 @@ i{
     display: inline-block;
 }
 
-.ion-checkmark-circled{
+.checked-item .ion-checkmark-circled{
     color: #E84C61;
 }
 
