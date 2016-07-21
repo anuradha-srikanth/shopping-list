@@ -16,19 +16,24 @@ $(document).ready(function(){
         console.log(item1);
 
         //append item to list 
-        var list = $(".items");
+        var list = $(".category");
         //make template and include item in it
         //var template = "<p>" + item1 + "</p>";
         /*var temp = "<li class=" + "non-item" + ">" + "<i class=" + "ion-record" + ">" + "</i>" + "<p>" + item1 + "</p>" + "<i id=" + "close" + " class=" + "ion-ios-close-empty" + ">" + "</i>" + "</li>";*/
         if (item1 != 0){
-            var templ = "<li class =\"non-item\"> <i class=\"ion-record\"> </i> <p>" + item1 + " </p> <i id=\"close\" class=\"ion-ios-close-empty\"> </i> </li>"
+            var templ = "<li class =\"non-item\"> <i class=\"ion-checkmark-circled\"> </i> <p>" + item1 + " </p> <i id=\"close\" class=\"ion-ios-close-empty\"> </i> </li>"
 
-            list.append(templ);
+            list.children(".items").append(templ);
             $("#userInput")[0].reset();
         }
         });
     }); 
+/*
+    $(".categories").on("click", ".non-item", function(){
+        $(this).remove()
+    });
 
+*/
 /*
     $("ul").finish().on('click', '.checked-item', function(event){
         var item = $("li").val();
@@ -39,24 +44,13 @@ $(document).ready(function(){
     });
 */
 
-    $("ul").on('click', '.non-item, .checked-item', function(event){
-        var item = $("li").val();
-        console.log($(this).attr('class') == "non-item");
-        //$(this).find("p").css("text-decoration", "line-through");
-        //$(this).removeClass('non-item').addClass('checked-item');
-        //$(this).children(":first").removeClass('ion-record').addClass('ion-checkmark-circled');
-
-        /*$(this).toggleClass('checked-item').toggleClass('non-item');
-        $(this).children(":first").toggleClass('ion-checkmark-circled').toggleClass('ion-record');*/
-        //if $(this).attr('class') = 
-        if($(this).attr('class') == "non-item"){
-            $(this).toggleClass('non-item').toggleClass('checked-item');
-            $(this).children(":first").toggleClass('ion-record').toggleClass('ion-checkmark-circled');
-        } else {
-            //$(this).toggleClass('checked-item').toggleClass('non-item');
-            //$(this).children(":first").toggleClass('ion-checkmark-circled').toggleClass('ion-record');
-        }
+    $(".items").on("click", ".non-item", function(){ 
+        $(this).toggleClass("checked-item"); 
     });
+
+    $(".items").on("click", ".ion-record", function(){
+        $(this).toggleClass('ion-checkmark-circled');
+    })
 
     $("li").on('click', '#close', function(event){
         $(this).closest('li').remove();
